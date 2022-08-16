@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Elements CPPS</title>
+    <style>
+  
+
+    </style>
+</head>
+
+<body class="container">
+    <h1>Design elements</h1>
+    <h2>Cards</h2>
+    <article class="card">
+        <header><h3>Basic card</h3></header>
+        <main>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam deleniti dicta eius magnam aut minus nulla accusantium, vero eum nisi ipsa voluptatem! Modi ipsum obcaecati, exercitationem sequi amet quod consequatur non ipsa aliquam hic quis recusandae et dicta inventore reprehenderit, assumenda sint dolor aliquid deleniti. Natus, minus. Ipsum eaque ullam doloribus cupiditate harum quibusdam corrupti nobis corporis repudiandae reprehenderit, laborum velit officia ab aspernatur facere expedita minima sit temporibus mollitia quisquam explicabo nemo impedit ad voluptatem! Ratione maxime blanditiis assumenda.</main>
+        <footer>This is a card footer</footer>
+    </article>
+    <p>You can use cards with ather classes, like layout, or buttons</p>
+    <article class="card shadow card-border-radius">
+        <header class="flex flex-justify-s-between flex-align-center"><h3>Advanced card</h3><button class="button button-secondary button-float-icon button-float-icon-trash" data-icon="&#xf1f8">Secondary</button></header>
+        <main>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam deleniti dicta eius magnam aut minus nulla accusantium, vero eum nisi ipsa voluptatem! Modi ipsum obcaecati, exercitationem sequi amet quod consequatur non ipsa aliquam hic quis recusandae et dicta inventore reprehenderit, assumenda sint dolor aliquid deleniti. Natus, minus. Ipsum eaque ullam doloribus cupiditate harum quibusdam corrupti nobis corporis repudiandae reprehenderit, laborum velit officia ab aspernatur facere expedita minima sit temporibus mollitia quisquam explicabo nemo impedit ad voluptatem! Ratione maxime blanditiis assumenda.</main>
+        <footer class="flex flex-justify-end flex-align-center flex-column-gap">
+            <button class="button button-primary button-float-icon button-float-icon-plus shadow" data-icon="&#xf004">Like</button>
+            <button class="button button-primary button-float-icon button-float-icon-plus shadow" data-icon="&#xf075">Comment</button>
+            <button class="button button-primary button-float-icon button-float-icon-plus shadow" data-icon="&#xf1e0">Share</button>
+        </footer>
+    </article>
+    <h2>Buttons</h2>
+        <h3>Basic buttons</h3>
+        <section class="flex flex-align-center flex-column-gap">
+            <button class="button button-primary">Button</button>
+            <button class="button button-secondary">Secondary</button>
+            <button class="button button-disabled">Disabled</button>
+        </section>
+        
+    
+
+        <h3>Buttons with floating icon</h3>
+        
+            <p>You can define any FontAwesome unicode character in data-icon atribute</p>
+            <h4>Angle</h4>
+            <section class="flex flex-column-gap">
+                <button class="button button-primary button-float-icon" data-icon="&#xf054">Button</button>
+                <button class="button button-secondary button-float-icon" data-icon="&#xf054">Secondary</button>
+                <button class="button button-disabled button-float-icon" data-icon="&#xf054">Disabled</button>
+            </section>
+            
+            <h4>Plus</h4>
+            <section class="flex flex-column-gap">
+            <button class="button button-primary button-float-icon" data-icon="&#x2b">Button</button>
+            <button class="button button-secondary button-float-icon" data-icon="&#x2b">Secondary</button>
+            <button class="button button-disabled button-float-icon" data-icon="&#x2b">Disabled</button>
+        </section>
+            <h4>Trash</h4>
+            <section class="flex flex-column-gap">
+            <button class="button button-primary button-float-icon" data-icon="&#xf1f8">Button</button>
+            <button class="button button-secondary button-float-icon" data-icon="&#xf1f8">Secondary</button>
+            <button class="button button-disabled button-float-icon" data-icon="&#xf1f8">Disabled</button>
+        </section>
+        
+    <h2>Form inputs</h2>
+        <form class="flex flex-wrap flex-gap">
+            <section>
+            <h3>Text inputs</h3>
+            <div class="input-text">
+                <input type="email" id="email" placeholder="email"></br> <!--text-->
+                <label for="email">Email</label>
+            </div>
+            <div class="input-text">
+                <input type="number" id="number" placeholder="number"></br> <!--text-->
+                <label for="number">number</label>
+            </div>
+            <div class="input-text">
+                <input type="password" id="password" placeholder="password"></br> <!--text-->
+                <label for="password">password</label>
+            </div>
+            <div class="input-text">
+                <input type="search" id="search" placeholder="search"></br> <!--text-->
+                <label for="search">search</label>
+            </div>
+            <div class="input-text">
+                <input type="tel" id="tel" placeholder="tel"></br> <!--text-->
+                <label for="tel">tel</label>
+            </div>
+            <div class="input-text">
+                <input type="text" id="text" placeholder="text"></br> <!--text-->
+                <label for="text">text</label>
+            </div>
+            <div class="input-text">
+                <input type="url" id="url" placeholder="url"></br> <!--text-->
+                <label for="url">url</label>
+            </div>
+        </section>
+        <section>
+            <h3>Date pickers</h3>
+            <script>
+               function changetype(element,type) {
+                   setTimeout(()=>{element.type = type}, 200);        
+               }
+               function typeToText(element){
+                   element.value === "" ? element.type = 'text' : ""
+               }
+            </script>
+           <div class="input-date">
+               <input type="text" onfocus="(changetype(this,'datetime-local'))" onfocusout="typeToText(this)" id="datetime" placeholder="Vyber datum">
+               <label for="datetime">DateTime</label>
+           </div>
+           <div class="input-date">
+               <input type="text" onfocus="(changetype(this,'date'))" onfocusout="typeToText(this)" id="date" placeholder="Vyber datum">
+               <label for="date">Date</label>
+           </div>
+           <div class="input-date">
+               <input type="text" onfocus="(changetype(this,'month'))" onfocusout="typeToText(this)" id="month" placeholder="Vyber datum">
+               <label for="month">Month</label>
+           </div>
+           <div class="input-date">
+               <input type="text" onfocus="(changetype(this,'week'))" onfocusout="typeToText(this)" id="week" placeholder="Vyber datum">
+               <label for="week">Week</label>
+           </div>
+           <div class="input-date">
+               <input type="text" onfocus="(changetype(this,'time'))" onfocusout="typeToText(this)" id="Time" placeholder="Vyber datum">
+               <label for="Time">Time</label>
+           </div>
+        </section>
+        <section>
+            <h3>With Icon</h3>
+            <div class="input-text input-text-icon">
+                <input type="email" id="emailicon" placeholder="email"></br> <!--text-->
+                <label for="emailicon" data-icon="&#x40">Email</label>
+            </div>
+            <div class="input-date input-date-icon">
+                <input type="text" onfocus="(changetype(this,'datetime-local'))" onfocusout="typeToText(this)" id="datetimeicon" placeholder="Vyber datum">
+                <label for="datetimeicon" data-icon="&#xf073">DateTime</label>
+            </div>
+        </section>
+        <section>
+            <h3>Read Only inputs</h3>
+            <div class="input-text input-readonly">
+                <input type="text" id="textro" placeholder="Read only" readonly value="Read Only"></br> <!--text-->
+                <label for="textro" data-icon="&#xf506">Email</label>
+            </div>
+        </section>
+        <section>
+            <h3>Other inputs</h3>
+            <div class="input-group">
+                <div class="input-group-content">
+                <span class="input-group-title">CheckBoxes</span>
+                    <label class="input-checkbox" for="checkbox1">
+                        <input type="checkbox" id="checkbox1">
+                        <div class="input-checkbox-input"></div>
+                        <span class="input-checkbox-label">CheckBox1</span>
+                    </label>
+                    <label class="input-checkbox" for="checkbox2">
+                        <input type="checkbox" id="checkbox2"></br>
+                        <div class="input-checkbox-input"></div>
+                        <span class="input-checkbox-label">CheckBox2</span>
+                    </label>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-group-content">
+                <span class="input-group-title">Radio input</span>
+                    <label class="input-checkbox" for="radio1">
+                        <input type="radio" id="radio1" name="radio">
+                        <div class="input-checkbox-input"></div>
+                        <span class="input-checkbox-label">CheckBox1</span>
+                    </label>
+                    <label class="input-checkbox" for="radio2">
+                        <input type="radio" id="radio2" name="radio"></br>
+                        <div class="input-checkbox-input"></div>
+                        <span class="input-checkbox-label">CheckBox2</span>
+                    </label>
+                </div>
+            </div>
+            
+            <input type="color"></br>    
+            <input type="file"></br> <!--Jde s tím něco?-->
+            <input type="range"></br>
+        </section>
+        <section>
+            <h3>Input Buttons</h3>
+            <p>For buttons use buttons classes</p>
+
+            <button type="Submit" class="button button-primary button-float-icon" data-icon="&#x2b">Reset</button></br> <!--Button-->         
+            <button type="submit" class="button button-primary button-float-icon" data-icon="&#x2b">Submit</button></br> <!--Button-->
+        </section>
+            
+        </form>
+    
+    <h2>Layouts</h2>
+    <h3>Flex</h3>
+    <div class="example-container flex">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <h3>Flex - direction column</h3>
+    <div class="example-container flex flex-column">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <h3>Flex - wrap</h3>
+    <div class="example-container flex flex-wrap">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+
+    <h3>Flex - justify-content - Start</h3>
+    <div class="example-container flex flex-justify-start">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <h3>Flex - justify-content - end</h3>
+    <div class="example-container flex flex-justify-end">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <h3>Flex - justify-content - center</h3>
+    <div class="example-container flex flex-justify-center">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <h3>Flex - justify-content - space between</h3>
+    <div class="example-container flex flex-justify-s-between">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <h3>Flex - justify-content - space around</h3>
+    <div class="example-container flex flex-justify-s-around">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <h3>Flex - justify-content - space evenly</h3>
+    <div class="example-container flex flex-justify-s-evenly">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+
+
+    <h3>Flex - align-items - start</h3>
+    <div class="example-container flex flex-align-start">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <h3>Flex - align-items - end</h3>
+    <div class="example-container flex flex-align-end">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <h3>Flex - align-items - center</h3>
+    <div class="example-container flex flex-align-center">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <h3>Flex - align-items - stretch</h3>
+    <div class="example-container flex flex-align-stretch">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <h3>Flex - align-items - baseline</h3>
+    <div class="example-container flex flex-align-baseline">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <h3>Flex gap</h3>
+    <div class="example-container flex flex-gap flex-wrap">
+        <div class="example-box example-box-width50">1</div>
+        <div class="example-box example-box-width50">2</div>
+        <div class="example-box example-box-width50">3</div>
+        <div class="example-box example-box-width50">4</div>
+    </div>
+    <h3>Flex row gap</h3>
+    <div class="example-container flex flex-row-gap flex-wrap">
+        <div class="example-box example-box-width50">1</div>
+        <div class="example-box example-box-width50">2</div>
+        <div class="example-box example-box-width50">3</div>
+        <div class="example-box example-box-width50">4</div>
+    </div>
+    <h3>Flex column gap</h3>
+    <div class="example-container flex flex-column-gap flex-wrap">
+        <div class="example-box example-box-width50">1</div>
+        <div class="example-box example-box-width50">2</div>
+        <div class="example-box example-box-width50">3</div>
+        <div class="example-box example-box-width50">4</div>
+    </div>
+    <h3>Flex item grow</h3>
+    <div class="example-container flex">
+        <div class="example-box flex-item-grow">1 Grow</div>
+        <div class="example-box">2 No Grow</div>
+        <div class="example-box flex-item-grow">3 Grow</div>
+    </div>
+    <!--<h3>fixed</h3>
+    <div class="example-container flex flex-column fixed-top-left">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <div class="example-container flex flex-column fixed-top-right">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <div class="example-container flex flex-column fixed-bot-left">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <div class="example-container flex flex-column fixed-bot-right">
+        <div class="example-box">1</div>
+        <div class="example-box">2</div>
+        <div class="example-box">3</div>
+    </div>
+    <div class="example-container flex flex-column fixed-top-full">
+        <div class="example-box">1</div>
+    </div>
+    <div class="example-container flex flex-column fixed-bot-full">
+        <div class="example-box">1</div>
+    </div>-->
+    
+</body>
+
+</html>
